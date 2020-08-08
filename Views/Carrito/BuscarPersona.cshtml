@@ -1,0 +1,79 @@
+﻿@model Barshop.Models.Registro
+
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<style>
+    ul li:nth-child(1) .fa::after, ul li:nth-child(2) .fa::after
+    , ul li:nth-child(3) .fa::after {
+        background: #60aa97;
+        width: 180px;
+        left: 100px;
+    }
+    ul li:last-child .fa::after {
+        width: 100px;
+    }
+</style>
+
+<div class="progress">
+    <ul id="progressbar">
+        <li class="active">
+            <img src=@Url.Content("~/img/search.png") alt=""><br>
+            <i class="fa fa-check" style="background: #60aa97;"></i>
+            <p>DETALLE</p>
+
+        </li>
+        <li>
+
+            <img src=@Url.Content("~/img/add_to_car.png") alt=""><br>
+            <i class="fa fa-check" style="background: #60aa97;"></i>
+            <p>CARRITO</p>
+
+        </li>
+        <li>
+
+            <img src=@Url.Content("~/img/details.png") alt=""><br>
+            <i class="fa fa-refresh"  style="background: #60aa97;"></i>
+            <p>CONTACTO</p>
+
+        </li>
+        <li>
+
+            <img src=@Url.Content("~/img/payment.png") alt=""><br>
+            <i class="fa fa-times"></i>
+            <p>REGISTRO</p>
+
+        </li>
+        <li>
+
+            <img src=@Url.Content("~/img/report.png") alt=""><br>
+            <i class="fa fa-times"></i>
+            <p>REPORTE</p>
+
+        </li>
+
+    </ul>
+</div>
+<div class="contenedor">
+    @Html.ActionLink("REGRESAR", "Comprar");
+    <div class="form-horizontal">
+        @using (Html.BeginForm())
+        {
+            <h3>Ingrese Dni: </h3>
+            <form>
+                @Html.TextBox("filtro")
+                <input type="submit" name="" value="Buscar" />
+            </form>
+
+        }
+        <div>@ViewBag.mensaje</div>
+
+    </div>
+
+   
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

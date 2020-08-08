@@ -1,0 +1,130 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.sidebar {
+    margin-top:-15px;
+    position: absolute;
+    width: 240px;
+    background: #1e1e1e;
+    transition: all .5s ease;
+    height:100%;
+}
+
+    .sidebar header {
+        color: white;
+        font-size: 28px;
+        line-height: 70px;
+        text-align: center;
+        user-select: none;
+        font-family: 'Montserrat',sans-serif;
+        background: #1b1b1b;
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        height: 65px;
+        width: 100%;
+        line-height: 65px;
+        padding-left: 30px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-top: 1px solid black;
+        border-left: 5px solid transparent;
+        box-sizing: border-box;
+        font-family: 'Open Sans',sans-serif;
+        transition: all .5s ease;
+    }
+
+.amenu:hover,
+a.active {
+    border-left: 5px solid #b93632;
+    color: #b93632;
+}
+
+.sidebar a i {
+    font-size: 23px;
+    margin-right: 16px;
+}
+
+.sidebar a span {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#check {
+    display: none;
+}
+
+label #btn, label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #262626;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: white;
+    font-size: 29px;
+    border-radius: 5px;
+    margin: 15px 30px;
+    border: 1px solid #262626;
+    transition: all .5s ease;
+}
+
+label #cancel {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ label #btn {
+    margin-left: 245px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#check:checked ~ label #cancel {
+    margin-left: 245px;
+    opacity: 1;
+    visibility: visible;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+@media (max-width:860px) {
+    .sidebar {
+        height: auto;
+        width: 70px;
+        left: 0;
+        margin: 20px 0;
+    }
+
+    header, #btn, #cancel {
+        display: none;
+    }
+
+    span {
+        position: absolute;
+        margin-left: 23px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sidebar a i {
+        margin-left: -10px;
+    }
+
+    a:hover {
+        width: 200px;
+        background: inherit;
+    }
+
+    .sidebar a:hover span {
+        opacity: 1;
+        visibility: visible;
+    }
+}

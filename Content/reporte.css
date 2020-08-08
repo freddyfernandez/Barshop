@@ -1,0 +1,42 @@
+﻿.form-horizontal {
+    text-align: center;
+    align-items: center;
+    margin: 1px auto;
+    width: 90%;
+    background-color: ghostwhite;
+    border: 1px solid #dadce0;
+    box-shadow: 1px 1px 3px 3px #999;
+    margin-top: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 96%;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.encabezado {
+    display: flex;
+   
+    margin-bottom: 15px;
+}
+.izquierda {
+   
+    width:40%;
+    margin-left:10px;
+    text-align:left;
+    
+}
+
+.derecha {
+    width: 40%;
+    margin-left: 10px;
+    text-align: left;
+}
+
+
+

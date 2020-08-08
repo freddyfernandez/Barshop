@@ -1,0 +1,383 @@
+﻿.contenedor {
+    text-align: center;
+    align-items: center;
+    font-family: Arial;
+    margin-top:15px;
+ 
+   
+  
+   
+}
+
+h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 24px;
+}
+
+
+.cajaboton {
+    display:flex;
+    width:50%;
+}
+.divbotoncaja {
+    
+   
+   
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1a73e8;
+    margin: 10px 10px;
+   
+}
+.divbotoncaja a{
+    font-weight: 400;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.divboton {
+    margin: 10px 10px;
+    text-align: center; 
+    display:flex;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1a73e8;
+    border-color: #d8d8d8;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+    width: 150px;
+  
+  
+}
+.divboton a{ 
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    color:white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #1a73e8;
+ 
+
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+}
+
+
+.input-text{
+    background: #dff0d8;
+    width: 30%;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.input-submit{
+    position: relative;
+    left: -4px;
+    border-radius: 10px 10px 10px 10px;
+    width: 100px;
+    height: 34px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+    input[type="submit"]:hover {
+        background: #ff5722;
+    }
+
+
+
+
+
+#main-container {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom:10px;
+    padding-left: 280px;
+}
+
+.table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 90%;
+    
+    
+}
+
+td, th {
+    padding: 20px;
+    width: 20%;
+    
+}
+
+
+thead {
+    background-color: Highlight;
+    color: white;
+    border-bottom: solid 1px #0F362D;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: purple;
+    color: white;
+}
+
+
+
+.page {
+    position: relative;
+    background-color: #fff;
+    width: 400px;
+    height: 50px;
+    margin: 0px auto;
+    display: flex;
+    padding: 0 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px #333;
+    font-family: Cambria;
+    box-sizing: border-box;
+  
+}
+
+    .page li {
+        list-style: none;
+        line-height: 50px;
+        margin: 0 5px;
+    }
+
+        .page li.pageNumber {
+            width: 50px;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .page li a {
+            display: block;
+            text-decoration: none;
+            color: #777;
+            font-weight: 600;
+            border-radius: 50%;
+        }
+
+.pageNumber {
+    padding: 8px 0px;
+}
+
+.page li.pageNumber:hover a {
+    background-color: #333;
+    color: #fff;
+}
+
+.page li:first-child {
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.page li:last-child {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/*Los ESTILOS se deben heredarse al reducir la pantalla SOLO CAMBIAR LOS TAMAÑOS */
+@media screen and (max-width: 860px) {
+    .table td {
+        width: 80%;
+        padding-top: 6px;
+        font-size: 12px;
+    }
+
+    .page {
+        position: relative;
+        background-color: #fff;
+        height: 50px;
+        margin: 0px 25%;
+        display: flex;
+        padding: 0 20px;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px #333;
+        font-family: Cambria;
+        box-sizing: border-box;
+        width: 50%;
+    }
+
+        .page li.pageNumber {
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .page li a {
+            width: auto;
+            display: block;
+            text-decoration: none;
+            color: #777;
+            font-weight: 600;
+            border-radius: 50%;
+        }
+}
+
+
+/*Pasos de compra*/
+
+.proceso {
+    margin: 10px;
+    display: flex;
+    width: 60%;
+    height: 50px;
+    background: inherit;
+    position: center;
+    margin-left: 20%;
+    padding-left: 5px;
+}
+
+.pasos {
+    margin-top: 5px;
+    background: #e9d8d8;
+    padding: 10px 10px;
+    width: 24.7%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 550;
+    border-radius: 30px;
+}
+
+#coloreo {
+    background-color: #ff5722;
+}
+
+
+/*PROGRESS BAR*/
+.progress{
+    margin:30px auto;
+}
+.progress img{
+    width: 50px;
+    margin-bottom: 10px;
+}
+ul{ 
+    text-align: center;
+}
+
+ul li{
+    display: inline-block;
+    width: 180px;
+    position: relative;
+
+}
+
+ul li .fa{
+   background: #ccc;
+   width: 30px;
+   height: 26px;
+   color: #fff;
+   border-radius: 50%;
+   padding:5px;
+}
+ul li .fa::after{
+    content: '';
+    background: #ccc;
+    height: 5px;
+    width:200px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top:65px;
+    z-index: -1;
+
+
+}
+
+/*
+ul li:nth-child(3) .fa{
+    background: #148e14;
+}
+ul li:nth-child(3).fa::after{
+    background: #148e14;
+}
+
+ul li:nth-child(1) .fa,ul li:nth-child(2) .fa{
+    background: #60aa97;
+}
+ul li:nth-child(1) .fa::after,ul li:nth-child(2) .fa::after{
+    background: #60aa97;
+}
+
+ul li:first-child .fa::after{
+    width: 105px;
+    left:100px;
+}
+ul li:last-child .fa::after{
+    width: 100px;
+   
+}
+*/
+
+@media screen and (max-width: 768px) {
+
+
+
+    .pasos {
+        margin-top: 5px;
+        background: #e9d8d8;
+        padding: 10px 10px;
+        width: 24.7%;
+        height: 35px;
+        font-size: 11px;
+        font-weight: 400;
+        border-radius: 12px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+
+
+    .pasos {
+        margin-top: 5px;
+        background: #e9d8d8;
+        padding: 10px 10px;
+        width: 24.7%;
+        height: 30px;
+        font-size: 7px;
+        font-weight: 200;
+        border-radius: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 860px) {
+
+    #main-container {
+        padding-left: 100px;
+    }
+}

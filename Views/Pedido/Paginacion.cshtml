@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Barshop.Models.Pedido>
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Paginacion";
+}
+
+
+
+<div class="contenedor">
+    <h2>Listado de Pedidos</h2>
+    <br />
+
+    <div class="box">
+        @using (Html.BeginForm())
+        {
+           
+            <form>
+                <input type="text" placeholder="Ingrese codigo de pedido" name="filtro"/>
+                <input type="submit" value="Buscar" />
+            </form>
+        }
+
+    </div>
+    <div id="main-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.idpedido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.fecha)
+                    </th>
+                
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.direccion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.monto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.estado)
+                    </th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.idpedido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fecha)
+                        </td>
+                      
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.direccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.monto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.estado)
+                        </td>
+                        <td>
+                            <div class="cajaboton">
+                                <!-el primer parametro del action link el nombre es editable--->
+                                <div class="divbotoncaja">@Html.ActionLink("Editar", "Edit", new { id = item.idpedido })</div>
+                           
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+        </table>
+    </div>
+    <ul class="page">
+        <!--<li><a href="#" class="prev">< prev</a></li>-->
+
+        @for (int i = 1; i <= (int)ViewBag.pags; i++)
+        {
+
+            if (ViewBag.pags < 1)
+            {
+                ViewBag.pags = 1;
+
+            }
+            <li class="pageNumber">
+                <a href="#" class="numeral">
+                    @Html.ActionLink(i.ToString(), "Paginacion", new { filtro = ViewBag.filtro, pagactual = i }, new { @class = "btn btn.primary" }) <!--variable,metodo,objeto,estilo-->
+                </a>
+            </li>
+        }
+        <!--li><a href="#" class="next">next ></a></li>-->
+
+    </ul>
+</div>

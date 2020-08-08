@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Barshop.Models.Producto>
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+@{
+    ViewBag.Title = "Paginacion";
+}
+<div class="contenedor">
+    <div style="font-size: 24px;">
+        @Html.ActionLink("Crear Producto", "Create")
+    </div>
+    <br/>
+ 
+    <div class="box">
+        @using (Html.BeginForm())
+        {
+            <h2>Ingrese iniciales del producto</h2>
+            <form>
+                <!--@Html.TextBox("filtro")-->
+
+                <input type="text" class="input-text" placeholder="Busqueda de Productos" name="filtro" id="buscar" />
+                <input type="submit" class="input-submit" name="" value="Buscar" />
+            </form>
+        }
+
+    </div>
+    <div id="main-container">
+        <table class="table" id="tabla">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.precio)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.precio)
+                    </td>
+                    <td>
+                        <div class="cajaboton">
+                            <!-el primer parametro del action link el nombre es editable--->
+                            <div class="divbotoncaja">@Html.ActionLink("Editar", "Edit", new { id = item.codigo })</div>
+                            <div class="divbotoncaja">@Html.ActionLink("Delete", "Delete", new { id = item.codigo })</div>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <!--paginacion-->
+
+    <ul class="page">
+        <!--<li><a href="#" class="prev">< prev</a></li>-->
+
+        @for (int i = 1; i <= (int)ViewBag.pags; i++)
+        {
+
+            if (ViewBag.pags < 1)
+            {
+                ViewBag.pags = 1;
+
+            }
+            <li class="pageNumber">
+                <a href="#" class="numeral">
+                    @Html.ActionLink(i.ToString(), "Paginacion", new { filtro = ViewBag.filtro, pagactual = i }, new { @class = "btn btn.primary" }) <!--variable,metodo,objeto,estilo-->
+                </a>
+            </li>
+        }
+        <!--li><a href="#" class="next">next ></a></li>-->
+
+    </ul>
+
+</div>
+<script>
+     var busqueda = document.getElementById('buscar');
+    var table = document.getElementById("tabla").tBodies[0];
+
+    buscaTabla = function(){
+      texto = busqueda.value.toLowerCase();
+      var r=0;
+      while(row = table.rows[r++])
+      {
+        if ( row.innerText.toLowerCase().indexOf(texto) !== -1 )
+          row.style.display = null;
+        else
+          row.style.display = 'none';
+      }
+    }
+
+    busqueda.addEventListener('keyup', buscaTabla);
+</script>
+

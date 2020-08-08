@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Barshop.Models.Producto>
+@{
+    ViewBag.Title = "Venta de Licores";
+}
+
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+<link href="~/Content/menu2.css" type="text/css" rel="stylesheet" />
+<div class="box" style="text-align:right;background:#0F1111;">
+    @using (Html.BeginForm())
+    {
+
+        <form>
+            <input placeholder="Busqueda de Productos" name="filtro"  class="input-text"/>
+            <input type="submit" value="Buscar"  />
+        </form>
+    }
+
+</div>
+<div class="sidebar">
+
+
+    <a class="amenu" href="#" id="enlace-equipo"><span>CLASICOS</span><i class="fas fa-link"></i></a>
+    <a class="amenu" href="#" id="enlace-servicio"><span>PREMIUM</span><i class="fas fa-calendar"></i></a>
+    <a class="amenu" href="#" id="enlace-trabajo"><span>MIXTOS</span><i class="fas fa-link"></i></a>
+
+ 
+
+</div>
+@Html.Partial("_PartialProducto")
+
+
+

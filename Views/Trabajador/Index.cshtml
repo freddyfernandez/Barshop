@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Barshop.Models.Trabajador>
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Index";
+}
+<div class="contenedor">
+
+    <div style="font-size: 24px;">
+        @Html.ActionLink("Crear Trabajador", "Create")
+    </div>
+    <br/>
+    <div id="main-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DNI)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Usuario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Password)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fecha_Contrato)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr style="font-size: 14px;">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DNI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Contrato)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Codigo })
+                        <!--@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })-->
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

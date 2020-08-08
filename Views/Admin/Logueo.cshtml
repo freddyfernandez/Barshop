@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Logueo";
+}
+<html>
+<head>
+    <title>login form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--Incluir el meta charset para reajustar a moviles-->
+    <link rel="stylesheet" type="text/css" href="~/Content/Login.css">
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <form>
+            <h1>INTRANET</h1>
+            <div class="form-field">
+                <label>INGRESE USUARIO:</label>
+                <input type="text" name="usuario" class="input">
+                <div class="border-line">
+                </div>
+            </div>
+            <div class="form-field">
+                <label>INGRESE CONTRASEÑA:</label>
+                <input type="password" name="password" class="input" id="myInput">
+                <div class="border-line">
+                </div>
+            </div>
+
+            <div class="check">
+                <label>mostrar password:</label>
+                <input type="checkbox" name="" onclick="myFunction()">
+            </div>
+
+
+
+
+            <div class="form-field">
+                <button type="submit">Ingresar</button>
+            </div>
+            <div>@ViewBag.mensaje</div>
+        </form>
+    }
+
+    <!-- FORMAS DE MOVER INPUT JQUERY Y MOSTRAR CONTRASEÑA JAVASCRIPT -->
+
+    <script>
+        $(document).ready(function () {
+            $(".input").focus(function () {
+                $(this).parent(".form-field").addClass("active")
+            })
+            $(".input").blur(function () {
+                if ($(this).val() == "") {
+                    $(this).parent(".form-field").removeClass("active")
+                }
+            })
+        })
+
+
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

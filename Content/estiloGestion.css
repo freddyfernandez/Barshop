@@ -1,0 +1,189 @@
+﻿
+:root {
+    --color1: rgb(219,144,.5);
+    --color2: #185c0714;
+    --color3: rgb(0, 161, 113);
+    --fondo: #f2f2f2;
+    --titulo: 33px;
+    --subtitulos: 20px;
+    --espacios: 10px;
+    --espacios-contenido: 45px;
+    --margenes: 60px;
+    --color4: #2ce9f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+    background-color: #1ce37c;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* HEADER*/
+
+
+header {
+    width: 100%;
+    height: 80px;
+    background-position: center;
+    background-size: cover;
+    background-color:Highlight;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+nav {
+    width: 100%;
+
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    z-index: 1; /*aparece delante de cualquier otro div de su mismo nivel */
+}
+
+.nav1 {
+    background-color:transparent;
+    height: 80px;
+    color: #fff;
+}
+
+
+
+.contenedor-nav {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    overflow: hidden;
+}
+
+nav .enlaces a {
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+}
+
+nav .enlaces a:hover {
+        border-bottom: 3px solid #1498ad;
+        
+}
+
+.logo, .logo img {
+    height: 80px;
+    z-index:1;
+}
+
+.icono {
+    display: none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+}
+
+
+
+
+/*Main*/
+.panel {
+    float:left;
+    width: 100px;
+    height: 600px;
+    background-color: darkturquoise;
+}
+.panel a {
+display: flex;
+
+}
+
+
+/*media query*/
+@media screen and (max-width: 700px) {
+    .nav2 {
+        color: #fff;
+    }
+
+    .icono {
+        display: block;
+        cursor: pointer;
+    }
+
+    .enlaces {
+        position: fixed;
+        top: 80px;
+        background: #2c3e50;
+        left: 0;
+        height: 100%;
+        transition: 1s;
+        width: 0;
+        overflow: hidden;
+    }
+
+        .enlaces a {
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 20px;
+            text-align: center;
+            background: #34495e;
+            color: #fff;
+        }
+
+    .textos > h1 {
+        font-size: 70px;
+    }
+
+    .textos > h2 {
+        font-size: 35px;
+    }
+
+    .content-card {
+        width: 48%;
+        margin-bottom: var(--margenes);
+    }
+
+    :root {
+        --margenes: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --espacios-contenido: 25px;
+    }
+
+    .content-card {
+        width: 90%;
+    }
+
+    .caja-servicios {
+        width: 90%;
+        margin-bottom: var(--margenes);
+    }
+
+    .cont-work {
+        width: 85%;
+    }
+
+    .marca-logo {
+        width: 80%;
+    }
+
+    .iconos {
+        margin: auto;
+    }
+}

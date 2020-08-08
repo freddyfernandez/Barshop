@@ -1,0 +1,49 @@
+﻿@model Barshop.Models.Producto
+
+
+<div class="caja">
+  
+    <div class="galeria-producto">
+
+        <div class="cont-work programacion" style="margin-bottom: 1px;height: 446px;">
+
+            <div class="img-work" style="height: 100%;">
+                <img class="imagen" src=@Url.Content(string.Format("~/imagenes/{0}.jpg",Model.codigo)) />
+            </div>
+        </div>
+        <div class="cont-descripcion">
+            <h2>Producto Seleccionado</h2>
+            <div class="textos-descripcion">
+                <h3>Producto:</h3>
+
+                <p>@Model.nombre</p>
+            </div>
+
+            <div class="textos-descripcion">
+                <h3>Descripcion:</h3>
+
+                <p style="text-align:justify;">@Model.descripcion</p>
+            </div>
+
+            <div class="textos-descripcion">
+                <h3>Precio:</h3>
+                <p> S/.@Model.precio </p>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                <div class="textos-descripcion">
+                    <h3>Cantidad:</h3>
+                    <input type="number" name="cantidad" step="1" value="1" />
+
+                </div>
+                <div class="boton">
+                    <input type="submit" class="input-submit" value="Agregar" />
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+  </div>

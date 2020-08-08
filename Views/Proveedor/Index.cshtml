@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Barshop.Models.Proveedores>
+<link href="~/Content/tabla.css" type="text/css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="contenedor">
+    <div id="main-container">
+       
+
+        <div style="font-size: 24px;">
+            @Html.ActionLink("Crear Proveedor", "Create")
+        </div>
+        <br/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.idProveedor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rucProveedor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.razSocial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.direccion)
+                    </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idProveedor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rucProveedor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.razSocial)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.direccion)
+                    </td>
+                    <td>
+                        <!-el primer parametro del action link el nombre es editable--->
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idProveedor }) |
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idProveedor })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

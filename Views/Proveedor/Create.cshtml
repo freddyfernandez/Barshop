@@ -1,0 +1,36 @@
+﻿@model Barshop.Models.Proveedores
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/formulario.css" type="text/css" rel="stylesheet" />
+
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div>
+            @Html.ActionLink("Consultar Servicio", "BuscarProveedor")
+        </div>
+        <h2>Create</h2>
+        <hr />
+       
+        <div>Ruc:</div>
+        <div><input type="text" name="rucProveedor" value="@ViewBag.ruc" /></div>
+        <div>Razon Social</div>
+        <div><input type="text" name="razSocial" value="@ViewBag.rsocial" /></div>
+        <div>Direccion actual:</div>
+        <div><input type="text" name="direccion" value="@ViewBag.direccion" /></div>
+
+
+
+        <div class="form-group">
+            <input type="submit" name="aceptar" value="Aceptar" />
+        </div>
+    </div>
+}
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Barshop.Models.Registro>
+
+
+<div class="galeria-work">
+    <table class="table">
+        <tr>
+            <td>Codigo</td>
+            <td>Descripción</td>
+            <td>Precio</td>
+            <td>Cantidad</td>
+            <td>Monto</td>
+            <td>Imagen</td>
+            <td>Accion</td>
+        </tr>
+        @foreach (var reg in Model)
+        {
+
+
+            <tr>
+                <td>@reg.idproducto</td>
+                <td>@reg.nombreproducto</td>
+                <td>@reg.preciounidad</td>
+                <td>@reg.cantidad</td>
+                <td>@reg.monto</td>
+                <td><div class="img-work"><img class="imagen" src=@Url.Content(string.Format("~/imagenes/{0}.jpg",@reg.idproducto))></div></td>
+                <td>@Html.ActionLink("Elimina", "Elimina", new { id = @reg.idproducto })</td>
+            </tr>
+
+
+        }
+    </table>
+
+</div>
+

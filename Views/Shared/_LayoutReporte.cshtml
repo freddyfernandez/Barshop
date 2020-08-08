@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <!--librerias-->
+    <script src="https://kit.fontawesome.com/151986d4a1.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css1")
+
+
+</head>
+<body class="hidden">
+    <header style="height:150px;">
+        <nav id="nav" class="nav1">
+            <div class="contenedor-nav">
+                <div class="logo">
+                    <img src=@Url.Content("~/img/logo.png") alt="">
+                </div>
+                <div class="enlaces" id="enlaces">
+                    <a href="#" id="enlace-inicio" class="btn-header">@Html.ActionLink("Inicio", "Index", "Carrito")</a>
+
+                    <a href="#" id="enlace-contacto" class="btn-header">@Html.ActionLink("Mi Carrito", "Pago", "Carrito")</a>
+
+                   
+
+                    @Html.Partial("_LoginPartial")
+                </div>
+             
+
+            </div>
+
+        </nav>
+   
+
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

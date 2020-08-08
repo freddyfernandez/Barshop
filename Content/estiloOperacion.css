@@ -1,0 +1,599 @@
+﻿
+:root {
+    --color1: rgb(219,144,.5);
+    --color2: #185c0714;
+    --color3: rgb(0, 161, 113);
+    --fondo: #f2f2f2;
+    --titulo: 27px;
+    --subtitulos: 20px;
+    --espacios: 10px;
+    --espacios-contenido: 45px;
+    --margenes: 60px;
+    --color4: #2ce9f4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open sans';
+
+}
+
+img {
+    vertical-align: top;
+}
+
+/* HEADER*/
+
+
+header {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(211,135,20, .6), rgba(29,141,171, .6), rgba(7,109,150, .50)), url(../img/fondo.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
+    z-index: 1; /*aparece delante de cualquier otro div de su mismo nivel */
+}
+
+.nav1 {
+    background-color: transparent;
+    height: 80px;
+    color: #fff;
+}
+
+.nav2 {
+    background: var(--fondo);
+    height: 88px;
+    color: #000;
+}
+
+.contenedor-nav {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    overflow: hidden;
+}
+
+nav .enlaces a {
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+}
+
+nav .enlaces a:hover {
+        border-bottom: 3px solid #1498ad;
+        
+}
+
+.logo, .logo img {
+    height: 80px;
+}
+
+.icono {
+    display: none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+}
+
+.textos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .textos > h1 {
+        font-size: 80px;
+    }
+
+    .textos > h2 {
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+
+/*Main*/
+.galeria-work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+
+}
+
+.galeria-producto {
+    padding: 1px 1px;
+    display: flex;
+    flex-wrap: wrap;
+   
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    width: 90%;
+   
+   
+ 
+ 
+}
+
+.cont-work {
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: var(--espacios-contenido);
+    
+}
+.cont-descripcion {
+    width: 69%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    height: 446px;
+    overflow: hidden;
+    margin-bottom: 1px;
+
+}
+
+.img-work {
+    margin-top: 5px;
+    height: 70%;
+    width: 88%;
+    margin-left: 6%;
+}
+
+.img-work img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.textos-work {
+    height: 5%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+   
+}
+.textos-work h4 {
+       
+        line-height: 20px;
+        font-weight: 300;
+}
+
+.textos-descripcion {
+    margin:10px 10px;
+    display: flex;
+}
+
+
+
+/*DIV SECTION*/
+.contenedor {
+    margin: auto;
+    padding: 10px 0;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    overflow: hidden;
+  
+}
+
+    .contenedor h3 {
+        font-size: var(--titulo);
+        color: var(--color1);
+        margin-bottom: var(--espacios);
+    }
+
+    .contenedor p {
+        text-align: center;
+        font-size: var(--subtitulos);
+        color: var(--color3);
+        font-weight: 300;
+    }
+
+.after::after {
+    content: '';
+    display: block;
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 100px;
+    height: 2px;
+    background: var(--color1);
+    margin-bottom: var(--espacios);
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-card {
+    width: 31%;
+    box-shadow: 0 0 4px 0 rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    height: 400px;
+}
+
+    .content-card:hover {
+        box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+    }
+
+
+.people {
+    height: 80%;
+    position: relative;
+}
+
+.content-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-team {
+    height: 20%;
+    width: 100%;
+    padding: var(--espacios) 0;
+}
+
+.about {
+
+    background: url(../img/teclado.jpg);/*SUPERPOSICION DE IMAGEN */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.servicios {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.caja-servicios {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    height: auto;
+}
+
+    .caja-servicios > h4 {
+        margin-bottom: var(--espacios);
+    }
+
+    .caja-servicios > p {
+        text-align: center;
+    }
+
+
+/*------------------------------------------*/
+
+.boton-personalizado {
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 18px;
+    color: #f9f9fd;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ff5722;
+    border-color: #d8d8d8;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+
+.form-horizontal {
+    text-align: center;
+    align-items: center;
+    margin: 1px auto;
+    width: 36%;
+    background-color: ghostwhite; /*#ede7f6;*/
+    border: 1px solid #dadce0;
+    box-shadow: 1px 1px 3px 3px #999;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/*DIV SECTION*/
+.caja {
+    margin: auto;
+    padding: 60px 0;
+    width: 100%;
+    max-width: 1400px;
+    text-align: center;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+    .caja h3 {
+        font-size: var(--subtitulos);
+        color: var(--color1);
+        margin-bottom: var(--espacios);
+        font-weight: 600;
+    }
+
+    .caja p {
+        text-align: center;
+        font-size: var(--subtitulos);
+        color: var(--color3);
+        font-weight: 600;
+    }
+
+.box {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+input {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: background 1s;
+    margin-left: 10px;
+}
+
+    input[type="number"] {
+        background: #dff0d8;
+        width: 80px;
+        height: 30px;
+        border: none;
+        outline: none;
+        padding: 0 5px;
+        border-radius: 10px 10px 10px 10px;
+        text-align: center;
+        margin-left: 5px;
+        margin-bottom: 5px;
+      
+    }
+
+    input[type="text"] {
+        background: #dff0d8;
+        width: 80%;
+        height: 45px;
+        border: none;
+        outline: none;
+        padding: 0 25px;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+
+    input[type="submit"] {
+        position: relative;
+        left: -4px;
+        border-radius: 10px 10px 10px 10px;
+        width: 100px;
+        height: 34px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #1a73e8;
+        color: #fff;
+    }
+
+        input[type="submit"]:hover {
+            background: #ff5722;
+        }
+
+.input-text{
+    background: #dff0d8;
+    width: 30%;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+    border-radius: 10px 10px 10px 10px;
+  
+}
+
+.input-submit {
+    position: relative;
+    left: -4px;
+    border-radius: 10px 10px 10px 10px;
+    width: 100px;
+    height: 34px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #1a73e8;
+    color: #fff;
+    top: 150px;
+}
+
+.form-horizontal .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+@media (min-width: 768px) {
+    .form-horizontal .control-label {
+        padding-top: 7px;
+        margin-bottom: 0;
+        text-align: right;
+    }
+}
+
+.form-horizontal .has-feedback .form-control-feedback {
+    right: 15px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .form-horizontal {
+        width: 85%;
+        padding-top: 6px;
+    }
+
+    .form-group-sm {
+        font-size: 12px;
+    }
+
+    .control-label {
+        font-size: 12px;
+    }
+}
+
+/*FOOTER*/
+
+footer {
+    background: url(../img/teclado.jpg);
+}
+
+.marca-logo {
+    width: 40%;
+    margin: auto;
+    margin-bottom: var(--espacios);
+}
+.marca-logo img {
+   width: 100%;
+}
+
+.iconos {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.fab {
+    font-size: 60px;
+    color: #fff;
+    margin-bottom: var(--espacios);
+    display: inline-block;
+}
+
+footer p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--color3);
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 4px;
+}
+
+
+/*media query*/
+@media screen and (max-width: 700px) {
+    .nav2 {
+        color: #fff;
+    }
+
+    .icono {
+        display: block;
+        cursor: pointer;
+    }
+
+    .enlaces {
+        position: fixed;
+        top: 80px;
+        background: #2c3e50;
+        left: 0;
+        height: 100%;
+        transition: 1s;
+        width: 0;
+        overflow: hidden;
+    }
+
+        .enlaces a {
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 20px;
+            text-align: center;
+            background: #34495e;
+            color: #fff;
+        }
+
+    .textos > h1 {
+        font-size: 70px;
+    }
+
+    .textos > h2 {
+        font-size: 35px;
+    }
+
+    .content-card {
+        width: 48%;
+        margin-bottom: var(--margenes);
+    }
+
+    :root {
+        --margenes: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --espacios-contenido: 25px;
+    }
+
+    .content-card {
+        width: 90%;
+    }
+
+    .caja-servicios {
+        width: 90%;
+        margin-bottom: var(--margenes);
+    }
+
+    .cont-work {
+        width: 85%;
+    }
+    .cont-descripcion {
+        width: 85%;
+        
+    }
+    .cont-descripcion h3{
+        font-size: 16px;
+    }
+    .cont-descripcion p{
+        font-size: 16px;
+    }
+    
+  
+
+    .marca-logo {
+        width: 80%;
+    }
+
+    .iconos {
+        margin: auto;
+    }
+}

@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Barshop.Models.Producto>
+
+<section class="about" id="equipo">
+    <div class="contenedor">
+        <h3>Licores Clasicos</h3>
+        <p class="after">Siempre mejorando para ti</p>
+        <div class="servicios">
+            <div class="caja-servicios">
+                <h4>Creativo y asombrosos</h4>
+                <p></p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<div class="galeria-work">
+
+    @foreach (var reg in Model)
+    {
+        if (reg.precio < 50 && reg.precio > 10)
+        {
+            <div class="cont-work programacion">
+
+                <div class="img-work">
+                    <img class="imagen" src=@Url.Content(string.Format("~/imagenes/{0}.jpg", @reg.codigo))>
+                </div>
+                <div class="textos-work">
+                    <h4>@reg.nombre </h4>
+                </div>
+                <div class="textos-work">
+                    <p>Precio: @reg.precio /Soles</p>
+                </div>
+                <div class="textos-work">
+                    <a colspan="2" class="boton-personalizado" href="@Url.Action("Seleccionar", "Carrito", new { id = @reg.codigo })">Seleccionar</a>
+                </div>
+
+            </div>
+        }
+
+
+
+
+    }
+</div>
+<section class="about" id="servicio">
+    <div class="contenedor">
+        <h3>Licores Premiun</h3>
+        <p class="after">Siempre mejorando para ti</p>
+        <div class="servicios">
+            <div class="caja-servicios">
+                <h4>Creativo y asombrosos</h4>
+                <p></p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<div class="galeria-work">
+
+    @foreach (var reg in Model)
+    {
+        if (reg.precio > 50 )
+        {
+            <div class="cont-work programacion">
+
+                <div class="img-work">
+                    <img class="imagen" src=@Url.Content(string.Format("~/imagenes/{0}.jpg", @reg.codigo))>
+                </div>
+                <div class="textos-work">
+                    <h4>@reg.nombre </h4>
+                </div>
+                <div class="textos-work">
+                    <p>Precio: @reg.precio /Soles</p>
+                </div>
+                <div class="textos-work">
+                    <a colspan="2" class="boton-personalizado" href="@Url.Action("Seleccionar", "Carrito", new { id = @reg.codigo })">Seleccionar</a>
+                </div>
+
+            </div>
+        }
+
+
+
+
+    }
+</div>
+<section class="about" id="trabajo">
+    <div class="contenedor">
+        <h3>Bebidas Mixtas</h3>
+        <p class="after">Siempre mejorando para ti</p>
+        <div class="servicios">
+            <div class="caja-servicios">
+                <h4>Creativo y asombrosos</h4>
+                <p></p>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<div class="galeria-work">
+
+    @foreach (var reg in Model)
+    {
+        if (reg.precio<10)
+        {
+            <div class="cont-work programacion">
+
+                <div class="img-work">
+                    <img class="imagen" src=@Url.Content(string.Format("~/imagenes/{0}.jpg", @reg.codigo))>
+                </div>
+                <div class="textos-work">
+                    <h4>@reg.nombre </h4>
+                </div>
+                <div class="textos-work">
+                    <p>Precio: @reg.precio /Soles</p>
+                </div>
+                <div class="textos-work">
+                    <a colspan="2" class="boton-personalizado" href="@Url.Action("Seleccionar", "Carrito", new { id = @reg.codigo })">Seleccionar</a>
+                </div>
+
+            </div>
+        }
+
+
+
+
+    }
+</div>
+

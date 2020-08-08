@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Barshop.Models.Registro>
+
+@{
+    Layout = "~/Views/Shared/_LayoutReporte.cshtml";
+    ViewBag.Title = "Reporte";
+}
+
+<link href="~/Content/reporte.css" type="text/css" rel="stylesheet" />
+<h2 style="text-align:center">Comprobante de Pedido</h2>
+
+
+
+<div class="form-horizontal">
+    @using (Html.BeginForm())
+    {
+
+    <div class="encabezado">
+        <div class="izquierda">
+            <div class="lado1">ID PEDIDO: @ViewBag.idpedido</div>
+            <div class="lado1">NOMBRE: @ViewBag.nombre</div>
+
+        </div>
+
+        <div class="derecha">
+            <div class="lado2">DIRECCION: @ViewBag.direccion_actual</div>
+            <div class="lado2">FECHA: @ViewBag.fecha</div>
+
+        </div>
+
+    </div>
+
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreproducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.preciounidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.monto)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idproducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombreproducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.preciounidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.monto)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+    <div>Monto Total: @ViewBag.monto</div>
+
+</div>
+
